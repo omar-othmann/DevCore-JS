@@ -102,7 +102,7 @@ let user = new core.Users()
 let res = await user.where("username").equals("value").first()
 if(res){
     res.password = "newPassword"
-    res.update()
+    await res.update()
     console.log("User password successfully updated")
 }else{
     user.username = "DevCore"
